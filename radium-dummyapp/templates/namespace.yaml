@@ -5,5 +5,5 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.namespace.name }}
   annotations: 
-    field.cattle.io/projectId: "{{ .Values.annotation.project }}"
+    field.cattle.io/projectName: "{{ .Values.annotation.project }}"
     opflex.cisco.com/endpoint-group: '{"tenant":"{{ .Values.annotation.tenant }}","app-profile":"{{ .Values.annotation.appprofile }}","name":"{{ .Values.annotation.name }}"}'

@@ -1,0 +1,17 @@
+namespace: 
+  name: projectname-nginxtestapp
+
+labels: dummyapp
+
+replicaCount: 1
+
+image:
+  repository: bcr-de01.inside.bosch.cloud/radium/nginx
+
+annotation:
+  project: c-xxxxx:p-xxxxx
+  tenant: xx0DCS0x
+  appprofile: CUSTOMER_ANP
+  name: xxxxxxxx_EPG
+  wildcard: xx-xxx.rb-dcs.bosch.com
+

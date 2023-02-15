@@ -1,0 +1,8 @@
+apiVersion: v1
+name: radium-dummyapp
+version: v0.1
+description: Dummy application for customer referrence. 
+
+maintainers: # (optional)
+  - name: Radium Platform (CI/PPB4))
+    email: Operations.Radium@de.bosch.com

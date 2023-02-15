@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.labels }}
+  namespace: {{ .Values.namespace.name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.labels }}
+  serviceName: {{ .Values.labels }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels }}
+    spec:
+      terminationGracePeriodSeconds: 10
+      securityContext:
+      containers:
+      - name: {{ .Values.labels }}
+        image: {{ .Values.image.repository }}
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 30m
+            memory: 40Mi
+          requests:
+            cpu: 27m
+            memory: 36Mi
+        ports:
+        - containerPort: 80
+          name: {{ .Values.labels }}
+        volumeMounts:
+        - name: {{ .Values.labels }}
+          mountPath: /var/log/nginx/
+      imagePullSecrets:
+      - name: {{ .Values.labels }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ .Values.labels }}
+      namespace: {{ .Values.namespace.name }}
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10m

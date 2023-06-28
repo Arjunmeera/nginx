@@ -1,5 +1,5 @@
 namespace: 
-  name: projectname-nginxtestapp
+  name: school
 
 labels: dummyapp
 

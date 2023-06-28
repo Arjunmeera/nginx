@@ -6,7 +6,7 @@ labels: dummyapp
 replicaCount: 1
 
 image:
-  repository: bcr-de01.inside.bosch.cloud/radium/nginx
+  repository: bcr-de
 
 annotation:
   project: c-xxxxx:p-xxxxx
